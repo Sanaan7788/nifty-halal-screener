@@ -1,0 +1,25 @@
+# --- Dependencies (Junk) ---
+node_modules/
+package-lock.json
+
+# --- OS System Files (Mac/Windows Junk) ---
+.DS_Store
+Thumbs.db
+
+# --- Playwright Internals (We don't need these) ---
+test-results/
+playwright-report/
+blob-report/
+user-data-dir/
+
+# --- Logs ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Environment Variables (Secrets) ---
+.env
+
+# --- NOTES ---
+# We are intentionally NOT ignoring 'screenshots/' and 'index.html'
+# because you need them to show up on your GitHub Pages website.

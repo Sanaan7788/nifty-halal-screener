@@ -1,0 +1,338 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Nifty 50 Halal Screener</title>
+        <style>
+            body { font-family: sans-serif; padding: 20px; background: #f8f9fa; }
+            .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+            table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+            th { background: #343a40; color: white; padding: 12px; text-align: left; }
+            td { padding: 12px; border-bottom: 1px solid #dee2e6; vertical-align: middle; }
+            
+            .badge { padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em; }
+            .HALAL { background: #d4edda; color: #155724; }
+            .NOT { background: #f8d7da; color: #721c24; }
+            .DOUBTFUL { background: #fff3cd; color: #856404; }
+            .SKIPPED { background: #e2e3e5; color: #383d41; text-decoration: line-through; }
+            
+            .thumb { height: 50px; border: 1px solid #ddd; cursor: pointer; transition: 0.2s; }
+            .thumb:hover { transform: scale(3); z-index: 10; border-color: #333; position: relative; }
+
+            /* Lightbox */
+            .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+            .modal-content { display: block; max-width: 90%; max-height: 90%; margin: 50px auto; }
+            .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; cursor: pointer; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>📊 Nifty 50 Halal Screener</h1>
+            <table>
+                <tr><th>#</th><th>Symbol</th><th>Company Name</th><th>Status</th><th>Evidence</th></tr>
+    <tr>
+            <td style="text-align:center; color:#888;">1</td>
+            <td><strong>ADANIENT</strong></td>
+            <td>-</td>
+            <td><span class="badge DOUBTFUL">DOUBTFUL</span></td>
+            <td><img src="screenshots/ADANIENT.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">2</td>
+            <td><strong>M&M</strong></td>
+            <td>-</td>
+            <td><span class="badge SKIPPED">SKIPPED</span></td>
+            <td><img src="screenshots/M&M.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">3</td>
+            <td><strong>ADANIPORTS</strong></td>
+            <td>-</td>
+            <td><span class="badge DOUBTFUL">DOUBTFUL</span></td>
+            <td><img src="screenshots/ADANIPORTS.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">4</td>
+            <td><strong>KOTAKBANK</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/KOTAKBANK.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">5</td>
+            <td><strong>EICHERMOT</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/EICHERMOT.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">6</td>
+            <td><strong>SBIN</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/SBIN.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">7</td>
+            <td><strong>TECHM</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/TECHM.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">8</td>
+            <td><strong>HINDALCO</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/HINDALCO.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">9</td>
+            <td><strong>SUNPHARMA</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/SUNPHARMA.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">10</td>
+            <td><strong>RELIANCE</strong></td>
+            <td>-</td>
+            <td><span class="badge DOUBTFUL">DOUBTFUL</span></td>
+            <td><img src="screenshots/RELIANCE.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">11</td>
+            <td><strong>MAXHEALTH</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/MAXHEALTH.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">12</td>
+            <td><strong>HINDUNILVR</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/HINDUNILVR.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">13</td>
+            <td><strong>APOLLOHOSP</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/APOLLOHOSP.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">14</td>
+            <td><strong>TITAN</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/TITAN.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">15</td>
+            <td><strong>JSWSTEEL</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/JSWSTEEL.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">16</td>
+            <td><strong>BAJFINANCE</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/BAJFINANCE.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">17</td>
+            <td><strong>WIPRO</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/WIPRO.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">18</td>
+            <td><strong>TATASTEEL</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/TATASTEEL.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">19</td>
+            <td><strong>JIOFIN</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/JIOFIN.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">20</td>
+            <td><strong>HCLTECH</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/HCLTECH.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">21</td>
+            <td><strong>MARUTI</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/MARUTI.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">22</td>
+            <td><strong>LT</strong></td>
+            <td>-</td>
+            <td><span class="badge SKIPPED">SKIPPED</span></td>
+            <td><img src="screenshots/LT.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">23</td>
+            <td><strong>CIPLA</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/CIPLA.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">24</td>
+            <td><strong>HDFCBANK</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/HDFCBANK.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">25</td>
+            <td><strong>INDIGO</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/INDIGO.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">26</td>
+            <td><strong>ETERNAL</strong></td>
+            <td>-</td>
+            <td><span class="badge DOUBTFUL">DOUBTFUL</span></td>
+            <td><img src="screenshots/ETERNAL.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">27</td>
+            <td><strong>DRREDDY</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/DRREDDY.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">28</td>
+            <td><strong>ASIANPAINT</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/ASIANPAINT.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">29</td>
+            <td><strong>ITC</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/ITC.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">30</td>
+            <td><strong>TCS</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/TCS.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">31</td>
+            <td><strong>NTPC</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/NTPC.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">32</td>
+            <td><strong>BEL</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/BEL.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">33</td>
+            <td><strong>GRASIM</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/GRASIM.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">34</td>
+            <td><strong>COALINDIA</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/COALINDIA.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">35</td>
+            <td><strong>ONGC</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/ONGC.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">36</td>
+            <td><strong>TMPV</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/TMPV.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">37</td>
+            <td><strong>NESTLEIND</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/NESTLEIND.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">38</td>
+            <td><strong>TRENT</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/TRENT.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">39</td>
+            <td><strong>ICICIBANK</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/ICICIBANK.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">40</td>
+            <td><strong>INFY</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/INFY.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">41</td>
+            <td><strong>AXISBANK</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/AXISBANK.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">42</td>
+            <td><strong>BAJAJFINSV</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/BAJAJFINSV.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">43</td>
+            <td><strong>ULTRACEMCO</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/ULTRACEMCO.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">44</td>
+            <td><strong>TATACONSUM</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/TATACONSUM.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">45</td>
+            <td><strong>BHARTIARTL</strong></td>
+            <td>-</td>
+            <td><span class="badge HALAL">HALAL</span></td>
+            <td><img src="screenshots/BHARTIARTL.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">46</td>
+            <td><strong>POWERGRID</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/POWERGRID.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">47</td>
+            <td><strong>SBILIFE</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/SBILIFE.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">48</td>
+            <td><strong>SHRIRAMFIN</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/SHRIRAMFIN.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr><tr>
+            <td style="text-align:center; color:#888;">49</td>
+            <td><strong>HDFCLIFE</strong></td>
+            <td>-</td>
+            <td><span class="badge NOT">NOT HALAL</span></td>
+            <td><img src="screenshots/HDFCLIFE.png" class="thumb" onclick="openModal(this.src)"></td>
+        </tr></table></div>
+    <div id="myModal" class="modal" onclick="this.style.display='none'">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+    <script>
+        function openModal(src) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("img01").src = src;
+        }
+    </script>
+    </body></html>
